@@ -1,0 +1,30 @@
+body {
+    font-family: 'Fredoka One', cursive;
+}
+
+.header {
+    text-align: center;
+    font-family: 'Comfortaa';
+}
+
+td {
+    vertical-align: top;
+    padding: 2%;
+}
+
+.map {
+    height: 400px;
+}
+
+.collapsible-body {
+    padding: 10px;
+    font-family: 'Share Tech Mono';
+}
+
+.fonty {
+    font-family: 'Share Tech Mono';
+}
+
+.btn {
+    margin: 3px;
+}
