@@ -55,5 +55,6 @@ var lengths = {
     'lengths of the Hindenburg': 245000000,
     'widths of a pizza box': 343000,
     'lengths of the elder wand': 381000,
-    'heights of the Baxter building': 105000000
+    'heights of the Baxter building': 105000000,
+    "lengths of a dog's intestines": 407000
 };
