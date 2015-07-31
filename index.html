@@ -5,6 +5,7 @@
     <link href='http://fonts.googleapis.com/css?family=Orbitron|Open+Sans|Fredoka+One|Share+Tech+Mono|Comfortaa' rel='stylesheet' type='text/css'>
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
     <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+    <link rel="shortcut icon" href="globe.png" />
     <title>How Far Is It?</title>
 </head>
 
@@ -272,82 +273,100 @@
                                     </table>
                                 </div>
                             </li>
-                        </ul>
+                            <li>
+                                <div class="collapsible-header" onclick="Materialize.showStaggeredList('#staggered-test')">Example measurements</div>
+                                <div class="collapsible-body">
+                                    <ul id="staggered-test">
+                                        <li>
+                                            <h5>13,325.4 wingspans of the ISS</h5> to get from Lizard's Point to John o' Groats
+                        </li>
+                        <li>
+                            <h5>10,727.53 heights of the Sydney Opera House</h5> to get from Ardnamurchan Point to Lowestoft ness
+                        </li>
+                    </ul>
                     </div>
-
-                <div class=" col s12 l6">
-                    <div class="map z-depth-3 hoverable" id="map">
+                    </li>
+                    </ul>
+                    </div>
+                    <div class=" col s12 l6">
+                        <div class="map z-depth-3 hoverable" id="map">
+                        </div>
                     </div>
                 </div>
-    </div>
-</div>
-</div>
-    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true."></script>
-    <script type="text/javascript" src="js/gmaps.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script type="text/javascript" src="js/js.js"></script>
-    <script type="text/javascript" src="js/conversions.js"></script>
-    <script type="text/javascript">
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+            </div>
+        </div>
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true."></script>
+        <script type="text/javascript" src="js/gmaps.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+        <script type="text/javascript" src="js/js.js"></script>
+        <script type="text/javascript" src="js/conversions.js"></script>
+        <script type="text/javascript">
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-  ga('create', 'UA-65774028-1', 'auto');
-  ga('send', 'pageview');
+        ga('create', 'UA-65774028-1', 'auto');
+        ga('send', 'pageview');
+        </script>
+        <script type="text/javascript">
+        function round(value, exp) {
+            if (typeof exp === 'undefined' || +exp === 0) {
+                return Math.round(value);
+            }
+            value = +value;
+            exp = +exp;
 
-</script>
-    <script type="text/javascript">
-    function round(value, exp) {
-      if (typeof exp === 'undefined' || +exp === 0){
-        return Math.round(value);
-      }
-      value = +value;
-      exp  = +exp;
+            if (isNaN(value) || !(typeof exp === 'number' && exp % 1 === 0)) {
+                return NaN;
+            }
+            // Shift
+            value = value.toString().split('e');
+            value = Math.round(+(value[0] + 'e' + (value[1] ? (+value[1] + exp) : exp)));
 
-      if (isNaN(value) || !(typeof exp === 'number' && exp % 1 === 0)){
-        return NaN;
-      }
-      // Shift
-      value = value.toString().split('e');
-      value = Math.round(+(value[0] + 'e' + (value[1] ? (+value[1] + exp) : exp)));
-
-      // Shift back
-      value = value.toString().split('e');
-      return +(value[0] + 'e' + (value[1] ? (+value[1] - exp) : -exp));
-    }
-    var distance = 535300000000;
-
-    function changeRoute() {
-        thing = drawNewRoute(function(d) {
-            distance = d * 1000000000;
-        });
-    }
-
-    function perspective() {
-        var keys = Object.keys(lengths);
-
-        var key = keys[Math.floor(keys.length * Math.random())];
-
-        Materialize.toast(round(distance / lengths[key],2).toLocaleString() + " " + key, 9000, 'rounded fonty orange darken-1');
-    };
-
-    function count() {
-        var keys = Object.keys(lengths);
-
-        document.getElementById("measurementCounter").innerHTML = keys.length.toString() + " measurements and counting";
-    }
-
-    document.onkeydown=function(){
-        if(window.event.keyCode=='13'){
-            changeRoute();
+            // Shift back
+            value = value.toString().split('e');
+            return +(value[0] + 'e' + (value[1] ? (+value[1] - exp) : -exp));
         }
-        if(window.event.keyCode=='45'){
-            perspective();
+        var distance = 535300000000;
+
+        function changeRoute() {
+            thing = drawNewRoute(function(d) {
+                distance = d * 1000000000;
+            });
         }
-    }
-    </script>
+
+        function perspective() {
+            var keys = Object.keys(lengths);
+
+            var key = keys[Math.floor(keys.length * Math.random())];
+
+            Materialize.toast(round(distance / lengths[key], 2).toLocaleString() + " " + key, 9000, 'rounded fonty orange darken-1');
+        };
+
+        function count() {
+            var keys = Object.keys(lengths);
+
+            document.getElementById("measurementCounter").innerHTML = keys.length.toString() + " measurements and counting";
+        }
+
+        document.onkeydown = function() {
+            if (window.event.keyCode == '13') {
+                changeRoute();
+            }
+            if (window.event.keyCode == '45') {
+                perspective();
+            }
+        }
+        </script>
 </body>
 
 </html>
