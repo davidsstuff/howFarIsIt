@@ -54,4 +54,5 @@ var lengths = {
     'times the apoapsis of Ganymede': 1071792000000000,
     'lengths of the Hindenburg': 245000000,
     'widths of a pizza box': 343000,
+    'lengths of the elder wand': 381000
 };
