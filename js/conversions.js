@@ -52,5 +52,6 @@ var lengths = {
     'wingspans of the ISS': 73150000,
     'times the circumfrence of the LHC': 27000000000,
     'times the apoapsis of Ganymede': 1071792000000000,
-    'lengths of the Hindenburg': 245000000
+    'lengths of the Hindenburg': 245000000,
+    'widths of a pizza box': 343000,
 };
