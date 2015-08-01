@@ -57,5 +57,6 @@ var lengths = {
     'lengths of the elder wand': 381000,
     'heights of the Baxter building': 105000000,
     "lengths of a dog's intestines": 407000,
-    'internal widths of a Birmingham double-decker green bus': 2439000
+    'internal widths of a Birmingham double-decker green bus': 2439000,
+    'depths of the heats stage': 225000000
 };

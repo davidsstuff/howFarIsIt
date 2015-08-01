@@ -1,392 +1,396 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <link href='http://fonts.googleapis.com/css?family=Orbitron|Open+Sans|Fredoka+One|Share+Tech+Mono|Comfortaa' rel='stylesheet' type='text/css'>
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
-    <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
-    <link rel="shortcut icon" href="globe.png" />
-    <title>How Far Is It?</title>
-</head>
+    <head>
+        <link href='http://fonts.googleapis.com/css?family=Orbitron|Open+Sans|Fredoka+One|Share+Tech+Mono|Comfortaa' rel='stylesheet' type='text/css'>
+        <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+        <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+        <link rel="shortcut icon" href="globe.png" />
+        <title>How Far Is It?</title>
+    </head>
 
-<body onload="count()">
-    <div class="container text-darken-1 orange-text">
-        <div class="row">
-            <div class="header col s12">
-                <h1>HOW FAR IS IT?</h1>
+    <body onload="count()">
+        <div class="container text-darken-1 orange-text">
+            <div class="row">
+                <div class="header col s12">
+                    <h1>HOW FAR IS IT?</h1>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="body container col s12">
-                <div class="conversion col s12 l6" id="conversion">
-                    <a class="waves-effect waves-red btn-large orange darken-1" onclick="perspective()">
+            <div class="row">
+                <div class="body container col s12">
+                    <div class="conversion col s12 l6" id="conversion">
+                        <a class="waves-effect waves-red btn-large orange darken-1" onclick="perspective()">
                             Give Me Perspective
                         </a>
-                    <ul class="collapsible popout" data-collapsible="accordion">
-                        <li>
-                            <div class="collapsible-header"><i class="material-icons"></i>Choose the route</div>
-                            <div class="collapsible-body">
-                                <div class="input-field">
-                                    <input id="start" type="text" class="validate">
-                                    <label for="start" class="orange-text darken-1">Origin location</label>
-                                </div>
-                                <div class="input-field">
-                                    <input id="end" type="text" class="validate">
-                                    <label for="end" class="orange-text darken-1">Destination location</label>
-                                </div>
-                                <a class="waves-effect waves-red btn-large orange darken-1" onclick="changeRoute()">
+                        <ul class="collapsible popout" data-collapsible="accordion">
+                            <li>
+                                <div class="collapsible-header"><i class="material-icons"></i>Choose the route</div>
+                                <div class="collapsible-body">
+                                    <div class="input-field">
+                                        <input id="start" type="text" class="validate">
+                                        <label for="start" class="orange-text darken-1">Origin location</label>
+                                    </div>
+                                    <div class="input-field">
+                                        <input id="end" type="text" class="validate">
+                                        <label for="end" class="orange-text darken-1">Destination location</label>
+                                    </div>
+                                    <a class="waves-effect waves-red btn-large orange darken-1" onclick="changeRoute()">
                                     Get The Distance
                                 </a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="collapsible-header">The Measurements</div>
-                            <div class="collapsible-body">
-                                <div>
-                                    <h5 id="measurementCounter"></h5>
                                 </div>
-                                <table class="hoverable">
-                                    <thead>
-                                        <tr>
-                                            <th>Object</th>
-                                            <th>How Big is it?</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Width of the colossus</td>
-                                            <td>16' 6"</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Width of a happy meal box</td>
-                                            <td>5"</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Thickness of paper</td>
-                                            <td>0.1mm</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Length of a dolphin</td>
-                                            <td>4m</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Average human foot length</td>
-                                            <td>26.3cm</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Length of the world's longest beard</td>
-                                            <td>17' 6"</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Size of a Chess board</td>
-                                            <td>50cm</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Focal length of the main lens of the Royal Greenwich Observatory's refraction telescope</td>
-                                            <td>6.82m</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Height of a Lego brick</td>
-                                            <td>9.6mm</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Diameter of a coke can</td>
-                                            <td>2.6"</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Height of a vending machine</td>
-                                            <td>72"</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Diameter of an iris</td>
-                                            <td>12mm</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Length of the minute hand on big ben</td>
-                                            <td>2.7m</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Average length of a neural connection in the brain</td>
-                                            <td>825 micrometers</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Length of an unbent drinking straw</td>
-                                            <td>21cm</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Length of a cat's tail</td>
-                                            <td>30cm</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Average wingspan of a male barn (European) swallow</td>
-                                            <td>33.25cm</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Radius of Kepler 452b</td>
-                                            <td>10,193.6km</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Diameter of the dome in the Pantheon</td>
-                                            <td>43.4m</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Width of the Amazon River at its smallest point</td>
-                                            <td>1.6km</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Height of a shipping container</td>
-                                            <td>8' 6"</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Width of a water polo goal</td>
-                                            <td>3m</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Length of a BBC computer key</td>
-                                            <td>1.7cm</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Length of a Raspberry PI</td>
-                                            <td>8.5cm</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Width of a Mac Mini</td>
-                                            <td>19.5cm</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Depth of the Sinclair ZX Spectrum</td>
-                                            <td>14cm</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Height of the Apple II</td>
-                                            <td>11.5cm</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Size of an Altair 8800b</td>
-                                            <td>18.7cm</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Size of the IBM PC XT</td>
-                                            <td>14.6cm</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Length of the Pentium II CPU card</td>
-                                            <td>6.5cm</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Modal length of a french rolling pin</td>
-                                            <td>18"</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Lowest point of an altocumulus cloud</td>
-                                            <td>2,000m</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Most common ceareal box width</td>
-                                            <td>8"</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Length of the River Nile</td>
-                                            <td>6,853km</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Height of the NASA Vehicle Assembly Building</td>
-                                            <td>160m</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Maximum depth of the Salton Sea</td>
-                                            <td>13m</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Length of a Stanley 8m long tape measure</td>
-                                            <td>8m 76mm</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Diameter of a bottle cap</td>
-                                            <td>26mm</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Maximum length of a meerkat's tail</td>
-                                            <td>24cm</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Diameter of the golden snitch</td>
-                                            <td>2.5cm</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Length of a cat o' nine tails whip</td>
-                                            <td>76cm</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Diameter of the Chernobyl exclusion zone</td>
-                                            <td>30km</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Circumfrence of Pluto's orbit</td>
-                                            <td>36,529,978,039km</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Width of the Midway's space invaders cabinet</td>
-                                            <td>26"</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Height of the Cray I S/2000</td>
-                                            <td>6' 5.5"</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Height of the Harwell Dekatron WITCH project</td>
-                                            <td>7' 1.5"</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Height of the Sydney Opera House</td>
-                                            <td>65m</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Body length of a peregrine falcon</td>
-                                            <td>46cm</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Width of the DnD Dungeon master's guide</td>
-                                            <td>8.6"</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Size of a Rubik's cube</td>
-                                            <td>5.7cm</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Wingspan of the ISS</td>
-                                            <td>240'</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Circumfrence of the Large Hadron Collider</td>
-                                            <td>27km</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Apoapsis of the orbit of Ganymede</td>
-                                            <td>1,071,792km</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Length of the LZ-129 Hindenburg zepplin</td>
-                                            <td>245m</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Width of a Pizza hut large Pizza box</td>
-                                            <td>13.5"</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Length of the elder wand</td>
-                                            <td>15"</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Height of the Baxter Building</td>
-                                            <td>35 Storeys</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Length of a Dog's large intestine</td>
-                                            <td>16"</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Internal width of a Birmingham green double-decker bus</td>
-                                            <td>8'</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="collapsible-header" onclick="Materialize.showStaggeredList('#staggered-test')">Example measurements</div>
-                            <div class="collapsible-body">
-                                <ul id="staggered-test">
-                                    <li>
-                                        <h5>13,325.4 wingspans of the ISS</h5> to get from Lizard's Point to John o' Groats
-                                    </li>
-                                    <li>
-                                        <h5>10,727.53 heights of the Sydney Opera House</h5> to get from Ardnamurchan Point to Lowestoft ness
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class=" col s12 l6">
-                    <div class="map z-depth-3 hoverable" id="map">
+                            </li>
+                            <li>
+                                <div class="collapsible-header">The Measurements</div>
+                                <div class="collapsible-body">
+                                    <div>
+                                        <h5 id="measurementCounter"></h5>
+                                    </div>
+                                    <table class="hoverable">
+                                        <thead>
+                                            <tr>
+                                                <th>Object</th>
+                                                <th>How Big is it?</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Width of the colossus</td>
+                                                <td>16' 6"</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Width of a happy meal box</td>
+                                                <td>5"</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Thickness of paper</td>
+                                                <td>0.1mm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Length of a dolphin</td>
+                                                <td>4m</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Average human foot length</td>
+                                                <td>26.3cm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Length of the world's longest beard</td>
+                                                <td>17' 6"</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Size of a Chess board</td>
+                                                <td>50cm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Focal length of the main lens of the Royal Greenwich Observatory's refraction telescope</td>
+                                                <td>6.82m</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Height of a Lego brick</td>
+                                                <td>9.6mm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Diameter of a coke can</td>
+                                                <td>2.6"</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Height of a vending machine</td>
+                                                <td>72"</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Diameter of an iris</td>
+                                                <td>12mm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Length of the minute hand on big ben</td>
+                                                <td>2.7m</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Average length of a neural connection in the brain</td>
+                                                <td>825 micrometers</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Length of an unbent drinking straw</td>
+                                                <td>21cm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Length of a cat's tail</td>
+                                                <td>30cm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Average wingspan of a male barn (European) swallow</td>
+                                                <td>33.25cm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Radius of Kepler 452b</td>
+                                                <td>10,193.6km</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Diameter of the dome in the Pantheon</td>
+                                                <td>43.4m</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Width of the Amazon River at its smallest point</td>
+                                                <td>1.6km</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Height of a shipping container</td>
+                                                <td>8' 6"</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Width of a water polo goal</td>
+                                                <td>3m</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Length of a BBC computer key</td>
+                                                <td>1.7cm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Length of a Raspberry PI</td>
+                                                <td>8.5cm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Width of a Mac Mini</td>
+                                                <td>19.5cm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Depth of the Sinclair ZX Spectrum</td>
+                                                <td>14cm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Height of the Apple II</td>
+                                                <td>11.5cm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Size of an Altair 8800b</td>
+                                                <td>18.7cm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Size of the IBM PC XT</td>
+                                                <td>14.6cm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Length of the Pentium II CPU card</td>
+                                                <td>6.5cm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Modal length of a french rolling pin</td>
+                                                <td>18"</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Lowest point of an altocumulus cloud</td>
+                                                <td>2,000m</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Most common ceareal box width</td>
+                                                <td>8"</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Length of the River Nile</td>
+                                                <td>6,853km</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Height of the NASA Vehicle Assembly Building</td>
+                                                <td>160m</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Maximum depth of the Salton Sea</td>
+                                                <td>13m</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Length of a Stanley 8m long tape measure</td>
+                                                <td>8m 76mm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Diameter of a bottle cap</td>
+                                                <td>26mm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Maximum length of a meerkat's tail</td>
+                                                <td>24cm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Diameter of the golden snitch</td>
+                                                <td>2.5cm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Length of a cat o' nine tails whip</td>
+                                                <td>76cm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Diameter of the Chernobyl exclusion zone</td>
+                                                <td>30km</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Circumfrence of Pluto's orbit</td>
+                                                <td>36,529,978,039km</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Width of the Midway's space invaders cabinet</td>
+                                                <td>26"</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Height of the Cray I S/2000</td>
+                                                <td>6' 5.5"</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Height of the Harwell Dekatron WITCH project</td>
+                                                <td>7' 1.5"</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Height of the Sydney Opera House</td>
+                                                <td>65m</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Body length of a peregrine falcon</td>
+                                                <td>46cm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Width of the DnD Dungeon master's guide</td>
+                                                <td>8.6"</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Size of a Rubik's cube</td>
+                                                <td>5.7cm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Wingspan of the ISS</td>
+                                                <td>240'</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Circumfrence of the Large Hadron Collider</td>
+                                                <td>27km</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Apoapsis of the orbit of Ganymede</td>
+                                                <td>1,071,792km</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Length of the LZ-129 Hindenburg zepplin</td>
+                                                <td>245m</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Width of a Pizza hut large Pizza box</td>
+                                                <td>13.5"</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Length of the elder wand</td>
+                                                <td>15"</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Height of the Baxter Building</td>
+                                                <td>35 Storeys</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Length of a Dog's large intestine</td>
+                                                <td>16"</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Internal width of a Birmingham green double-decker bus</td>
+                                                <td>8'</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Depth of the stage in hall 9 of the ICC, Birmingham</td>
+                                                <td>225cm</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="collapsible-header" onclick="Materialize.showStaggeredList('#staggered-test')">Example measurements</div>
+                                <div class="collapsible-body">
+                                    <ul id="staggered-test">
+                                        <li>
+                                            <h5>13,325.4 wingspans of the ISS</h5> to get from Lizard's Point to John o' Groats
+                                        </li>
+                                        <li>
+                                            <h5>10,727.53 heights of the Sydney Opera House</h5> to get from Ardnamurchan Point to Lowestoft ness
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class=" col s12 l6">
+                        <div class="map z-depth-3 hoverable" id="map">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true."></script>
-    <script type="text/javascript" src="js/gmaps.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script type="text/javascript" src="js/js.js"></script>
-    <script type="text/javascript" src="js/conversions.js"></script>
-    <script type="text/javascript">
-    (function(i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function() {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date();
-        a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true."></script>
+        <script type="text/javascript" src="js/gmaps.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+        <script type="text/javascript" src="js/js.js"></script>
+        <script type="text/javascript" src="js/conversions.js"></script>
+        <script type="text/javascript">
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-    ga('create', 'UA-65774028-1', 'auto');
-    ga('send', 'pageview');
-    </script>
-    <script type="text/javascript">
-    function round(value, exp) {
-        if (typeof exp === 'undefined' || +exp === 0) {
-            return Math.round(value);
+        ga('create', 'UA-65774028-1', 'auto');
+        ga('send', 'pageview');
+        </script>
+        <script type="text/javascript">
+        function round(value, exp) {
+            if (typeof exp === 'undefined' || +exp === 0) {
+                return Math.round(value);
+            }
+            value = +value;
+            exp = +exp;
+
+            if (isNaN(value) || !(typeof exp === 'number' && exp % 1 === 0)) {
+                return NaN;
+            }
+            // Shift
+            value = value.toString().split('e');
+            value = Math.round(+(value[0] + 'e' + (value[1] ? (+value[1] + exp) : exp)));
+
+            // Shift back
+            value = value.toString().split('e');
+            return +(value[0] + 'e' + (value[1] ? (+value[1] - exp) : -exp));
         }
-        value = +value;
-        exp = +exp;
+        var distance = 535300000000;
 
-        if (isNaN(value) || !(typeof exp === 'number' && exp % 1 === 0)) {
-            return NaN;
+        function changeRoute() {
+            thing = drawNewRoute(function(d) {
+                distance = d * 1000000000;
+            });
         }
-        // Shift
-        value = value.toString().split('e');
-        value = Math.round(+(value[0] + 'e' + (value[1] ? (+value[1] + exp) : exp)));
 
-        // Shift back
-        value = value.toString().split('e');
-        return +(value[0] + 'e' + (value[1] ? (+value[1] - exp) : -exp));
-    }
-    var distance = 535300000000;
+        function perspective() {
+            var keys = Object.keys(lengths);
 
-    function changeRoute() {
-        thing = drawNewRoute(function(d) {
-            distance = d * 1000000000;
-        });
-    }
+            var key = keys[Math.floor(keys.length * Math.random())];
 
-    function perspective() {
-        var keys = Object.keys(lengths);
+            Materialize.toast(round(distance / lengths[key], 2).toLocaleString() + " " + key, 9000, 'rounded fonty orange darken-1');
+        };
 
-        var key = keys[Math.floor(keys.length * Math.random())];
+        function count() {
+            var keys = Object.keys(lengths);
 
-        Materialize.toast(round(distance / lengths[key], 2).toLocaleString() + " " + key, 9000, 'rounded fonty orange darken-1');
-    };
-
-    function count() {
-        var keys = Object.keys(lengths);
-
-        document.getElementById("measurementCounter").innerHTML = keys.length.toString() + " measurements and counting";
-    }
-
-    document.onkeydown = function() {
-        if (window.event.keyCode == '13') {
-            changeRoute();
+            document.getElementById("measurementCounter").innerHTML = keys.length.toString() + " measurements and counting";
         }
-        if (window.event.keyCode == '45') {
-            perspective();
+
+        document.onkeydown = function() {
+            if (window.event.keyCode == '13') {
+                changeRoute();
+            }
+            if (window.event.keyCode == '45') {
+                perspective();
+            }
         }
-    }
-    </script>
-</body>
+        </script>
+    </body>
 
 </html>
