@@ -377,7 +377,7 @@
 
             var key = keys[Math.floor(keys.length * Math.random())];
 
-            Materialize.toast(round(distance / lengths[key], 2).toLocaleString() + " " + key, 9000, 'rounded fonty orange darken-1');
+            Materialize.toast(round(distance / lengths[key], 2).toLocaleString() + " " + key.toString() + " <a class='twitter-share-button teal btn amber-text text-lighten-3' href='http://twitter.com/intent/tweet?text=" + round(distance / lengths[key], 2).toLocaleString() + " " + key.toString() + " From " + document.getElementById("start").value + " to " + document.getElementById("end").value + " http://bit.ly/1Hh9xVk" + ">Tweet </a>", 9000, 'rounded fonty orange darken-1');
         };
 
         function count() {
